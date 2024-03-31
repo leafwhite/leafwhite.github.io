@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>输入数字输出一句话</title>
+<script>
+
+function displayMessage() {
+  const numberInput = document.getElementById('numberInput').value;
+  const number = parseInt(numberInput, 10);
+  if (isNaN(number)) {
+    alert('请输入0-9之间的数字！');
+    return;
+  }
+  const message = getMessageBasedOnNumber(number);
+
+document.getElementById('output').innerHTML = message;
+}
+
+
+function getMessageBasedOnNumber(number) {
+  let message;
+  switch (number) {
+    case 1:
+      message = '一抹晚烟荒戍垒，半竿斜日旧关城。';
+      break;
+    case 2:
+      message = '二月春归风雨天，碧桃花下感流年。';
+      break;
+    case 3:
+      message = '三秦流血已成川，塞上黄云战马闲。';
+      break;
+      case 4:
+        message = '四百年间一弹指，当时松竹今余几。';
+        break;case 5:
+          message = '五陵年少金市东，银鞍白马度春风。';
+          break;case 6:
+            message = '六出飞花入戏鸟,数声啼酒灌离杯。';
+            break;case 7:
+              message = '七松亭上望秦川，高鸟闲云满目前。';
+              break;case 8:
+                message = '八寨雄图今更固，行随赏乐胜蓬瀛。';
+                break;case 9:
+                  message = '九霄云路望长安，春风柳絮满人间。';
+                  break;case 0:
+                    message = '零落不因春雨，吹嘘何假东风。';
+                    break;
+    default:
+      message = `你输入了数字${number}，请输入0-9之间的数字！`;
+  }
+  return message;
+}
+
+
+
+</script>
+</head>
+<body>
+  <div style="text-align: center;">
+
+<h1>输入一个数字，给你一句诗词</h1>
+
+  <div class="container-fluid">
+<input type="number" id="numberInput" placeholder="请输入一个数字">
+<button onclick="displayMessage()">输出语段</button>
+<p id="output"></p>
+<style type="text/css">
+body {
+
+padding-left:11em;
+font-family:geogia,"Times New Roman",Times,serif;
+color: #330066;
+background-color: #ccffff}
+
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
